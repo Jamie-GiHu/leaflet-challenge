@@ -1,3 +1,5 @@
+var myMap ={};
+
 // STEP ONE
 // Get data set
 
@@ -77,6 +79,8 @@ function createFeatures(earthquakeData) {
   createMap(earthquakes);
 }
 
+
+
 // Function to create map layers
 function createMap(earthquakes) {
 
@@ -117,7 +121,7 @@ function createMap(earthquakes) {
     };
 
     // Create the map with our layers
-    var myMap = L.map("map", {
+    myMap = L.map("map", {
       center: [32.00, -87.00],
       zoom: 3,
       layers: [satellitemap, earthquakes]
@@ -130,4 +134,32 @@ function createMap(earthquakes) {
         collapsed: false
     }).addTo(myMap);
 
+    // Add legend to myMap
+    info.addTo(myMap);
+
 };
+
+// Create legend and position on bottom right of map
+var info = L.control({position: "bottomright"});
+
+// When the layer control is added, insert a div with the class of "legend"
+info.onAdd = function() {
+
+  // Create a <div> element to insert legend
+  var div = L.DomUtil.create("div", "legend");
+
+  // Create labels and values to find colors
+  var magnitudeLabels = ["0-1", "1-2", "2-3", "3-4", "4-5", "5+"];
+  var magnitudeScale = [0.5, 1.5, 2.5, 3.5, 4.5, 5.5];
+
+  // Create the legend inner html
+  div.innerHTML = '<div><strong>Legend</strong></div>';
+  for (var i = 0; i < magnitudeScale.length; i++) {
+    div.innerHTML += '<i style = "background: ' + circleHue(magnitudeScale[i]) 
+    + '">&nbsp;</i>&nbsp;&nbsp;' + magnitudeLabels[i] + '<br/>';
+  };
+  return div;
+};
+
+// Add legend to myMap
+// info.addTo(myMap);
