@@ -16,6 +16,7 @@ Using HTML, CSS, JavaScript, Leaflet libraries and MapBox, create an interactive
 1. HTML file (filename: leaflet-challenge/Leaflet-Step-2/index.html)
 2. Javascript files (filenames: app.js in sub-folder 'leaflet-challenge/Leaflet-Step-2/js/')
 3. Published website [here](https://jamie-gihu.github.io/leaflet-challenge/Leaflet-Step-2/)
+4. API key for Mapbox for published Leaflet-Step-2 on GitHub Pages
 
 #### Published article:
 ![Screenshot](/D3-data-journalism/assets/images/Fig1.gif)
