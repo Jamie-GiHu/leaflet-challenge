@@ -18,5 +18,5 @@ Using HTML, CSS, JavaScript, Leaflet libraries and MapBox, create an interactive
 3. Published website [here](https://jamie-gihu.github.io/leaflet-challenge/Leaflet-Step-2/)
 4. API key for Mapbox for published Leaflet-Step-2 on GitHub Pages
 
-#### Published article:
-![Screenshot](/Leaflet-Step-2/static/images/Fig1.gif)
+#### Published interactive visualisation:
+![Screenshot](Leaflet-Step-2/static/images/Fig1.gif)
