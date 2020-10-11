@@ -19,4 +19,4 @@ Using HTML, CSS, JavaScript, Leaflet libraries and MapBox, create an interactive
 4. API key for Mapbox for published Leaflet-Step-2 on GitHub Pages
 
 #### Published interactive visualisation:
-![Screenshot](Leaflet-Step-2/static/images/Fig1.gif)
+![Screenshot](Leaflet-Step-2/static/images/Fig1.GIF)
