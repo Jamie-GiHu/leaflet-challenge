@@ -50,13 +50,6 @@ function calcRadius(magnitude) {
 // Function to create marker layer and popup
 function createFeatures(earthquakeData) {
 
-  // Define a function we want to run once for each feature in the features array
-  // Give each feature a popup describing the place and time of the earthquake
-  function onEachFeature(feature, layer) {
-    layer.bindPopup("<h3>" + feature.properties.place +
-      "</h3><hr><p>Magnitude: " + feature.properties.mag + "</p>");
-  }
-
   // Create a GeoJSON layer containing the features array on the earthquakeData object
   // Run the onEachFeature function once for each piece of data in the array
   var earthquakes = L.geoJSON(earthquakeData, {
@@ -71,6 +64,14 @@ function createFeatures(earthquakeData) {
           fillOpacity: 0.7,
           radius: calcRadius(+feature.properties.mag) // Use function to calculate radius based on magnitude 
       });
+    },
+
+    
+    // Define a function we want to run once for each feature in the features array
+    // Give each feature a popup describing the place and time of the earthquake
+    onEachFeature: function(feature, layer) {
+      layer.bindPopup("<h5>" + feature.properties.place +
+      "</h5><hr><p>Magnitude: " + feature.properties.mag + "</p>");
     }
       
   });
@@ -156,10 +157,7 @@ info.onAdd = function() {
   div.innerHTML = '<div><strong>Legend</strong></div>';
   for (var i = 0; i < magnitudeScale.length; i++) {
     div.innerHTML += '<i style = "background: ' + circleHue(magnitudeScale[i]) 
-    + '">&nbsp;</i>&nbsp;&nbsp;' + magnitudeLabels[i] + '<br/>';
+    + '"></i>&nbsp;' + magnitudeLabels[i] + '<br/>';
   };
   return div;
 };
-
-// Add legend to myMap
-// info.addTo(myMap);
