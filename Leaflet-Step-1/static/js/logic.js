@@ -1,3 +1,4 @@
+// Set global variable
 var myMap ={};
 
 // STEP ONE
