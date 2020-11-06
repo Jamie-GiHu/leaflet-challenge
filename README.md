@@ -1,5 +1,5 @@
 # leaflet-challenge
- Jamie Tan Leaflet challenge submission
+The goal of the project is to create interactive maps with the location and magnitude of earthquakes during the last 7 days around the world. 
 
 ### Background of the challenge:
 
